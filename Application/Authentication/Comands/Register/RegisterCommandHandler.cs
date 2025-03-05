@@ -10,21 +10,23 @@ namespace Application.Authentication.Comands.Register;
 
 public class RegisterCommandHandler : IRequestHandler<RegisterCommand, AuthenticationResult>
 {
-    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator, IUserReopsitory userRepository)
+    public RegisterCommandHandler(IJwtTokenGenerator jwtTokenGenerator,IUnitOfWork unitOfWork)
     {
         _jwtTokenGenerator = jwtTokenGenerator;
-        _userRepository = userRepository;
+        _unitOfWork = unitOfWork;
     }
 
     private readonly IJwtTokenGenerator _jwtTokenGenerator;
-    private readonly IUserReopsitory _userRepository;
+    private readonly IUnitOfWork _unitOfWork;
+
 
     public async Task<AuthenticationResult> Handle(RegisterCommand request, CancellationToken cancellationToken)
     {
-    
-        if (await _userRepository.GetUserByEmail(request.Email) is not null)
-       {
-            throw new Exception("User already exists");
+        var userRepository = _unitOfWork.Repository<User>();
+        var existingUser = await userRepository.SingleOrDefaultAsync(u => u.Email == request.Email);
+        if (existingUser != null)
+        {
+            throw new Exception("Email already exists");
         }
         var user = new User
         {
@@ -34,7 +36,8 @@ public class RegisterCommandHandler : IRequestHandler<RegisterCommand, Authentic
             Password = request.Password,
             Role = request.Role
         };
-        await _userRepository.AddUser(user);
+        await userRepository.AddAsync(user);
+        await _unitOfWork.SaveChangesAsync();
         
         var token = _jwtTokenGenerator.GenerateJwtToken(user);
         return new AuthenticationResult(user, token);

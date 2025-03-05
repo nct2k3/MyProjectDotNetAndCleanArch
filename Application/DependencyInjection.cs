@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Application.Authentication.Comands.Register;
 using Application.Authentication.Commands.Register;
+using Application.Common.Interfaces.Persistance;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +18,7 @@ public static class DependencyInjection
             // Đăng ký MediatR và handler từ assembly chứa RegisterCommandHandler
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(RegisterCommandHandler).Assembly));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
         }

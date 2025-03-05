@@ -3,7 +3,7 @@ using Application.Common.Interfaces;
 using Application.Common.Interfaces.Persistance;
 using Application.Common.Interfaces.Service;
 using Infrastructure.Authentiscation;
-using Infrastructure.Persistance;
+using Infrastructure.Persistence;
 using Infrastructure.Service;
 
 using Microsoft.Extensions.DependencyInjection;
@@ -19,7 +19,8 @@ public static class DependencyInjection
     {
         services.AddAuth(configuration);
         services.AddSingleton<IDateTimeProvider, DataTimeProvider>();
-        services.AddScoped<IUserReopsitory, UserRepository>();
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         return services;
         
     }
