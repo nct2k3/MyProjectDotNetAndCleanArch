@@ -59,3 +59,4 @@ C:\Users\T14 Gen 3\RiderProjects\BockingFood\BockingFood\obj\Debug\net8.0\ref\Bo
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BockingFood\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BockingFood\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BockingFood\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BockingFood\obj\Debug\net8.0\BockingFood.sourcelink.json

@@ -28,7 +28,7 @@ public class AuthenticationController : ControllerBase
         // Chuyển đổi request thành command
         var command = _mapper.Map<RegisterCommand>(request);
 
-        // Gửi command qua Mediator và nhận kết quả
+        // Gửi command qua Mediator và nhận kết quả viêc dưa va ong giup xu ly cac phan ngoai le 
         var authResult = await _mediator.Send(command);
 
         // Trả về kết quả thành công
