@@ -14,6 +14,7 @@ public static class DependancyInjection
                                 );
         services.AddMapping();
         services.AddSingleton<ProblemDetailsFactory, MyProblemDetailFactory>();
+        
         return services;
     }
 }

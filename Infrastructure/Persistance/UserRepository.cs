@@ -1,19 +1,32 @@
 ﻿
 using Application.Common.Interfaces.Persistance;
+using Infrastructure.DbContext;
+using Microsoft.EntityFrameworkCore;
 using Presentation.Entities;
 
 namespace Infrastructure.Persistance;
 
 public class UserRepository:IUserReopsitory
 {
-    public static List<User> _users=new();
-    public User? GetUserByEmail(string email)
+
+    public ApplicationDbContext _DbContext;
+
+    public UserRepository(ApplicationDbContext dbContext)
     {
-       return _users.FirstOrDefault(u => u.Email == email);
+        _DbContext = dbContext;
+    }
+    
+    public async Task<User?> GetUserByEmail(string email)
+    {
+        return await _DbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
     }
 
-    public void AddUser(User user)
+
+
+    public async Task AddUser(User user)
     {
-       _users.Add(user);
+        await _DbContext.Users.AddAsync(user);
+        await _DbContext.SaveChangesAsync();
     }
+
 }

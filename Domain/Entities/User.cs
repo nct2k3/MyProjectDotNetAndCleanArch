@@ -1,8 +1,10 @@
-﻿namespace Presentation.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Presentation.Entities;
 
 public class User
 {
-    public Guid Id { get; set; } = Guid.NewGuid();
+    [Key]public Guid Id { get; set; } = Guid.NewGuid();
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
     public string Email { get; set; } = null!;

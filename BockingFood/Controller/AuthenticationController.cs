@@ -1,8 +1,10 @@
 ﻿using Application.Authentication.Commands.Register;
 using Contracts;
+using Infrastructure.DbContext;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BockingFood.Controllers;
 
@@ -15,11 +17,13 @@ public class AuthenticationController : ControllerBase
 {
     private readonly ISender _mediator;
     private readonly IMapper _mapper;
+    private ApplicationDbContext _dbContext;
 
-    public AuthenticationController(ISender mediator, IMapper mapper)
+    public AuthenticationController(ISender mediator, IMapper mapper, ApplicationDbContext dbContext)
     {
         _mediator = mediator;
         _mapper = mapper;
+        _dbContext = dbContext;
     }
 
     [HttpPost("register")]
@@ -40,29 +44,20 @@ public class AuthenticationController : ControllerBase
     {
         return Ok(new { Message = "This is a public endpoint!" });
     }
-}
-
-[Authorize(Policy = "AdminOnly")]
-[ApiController]
-[Route("api/[controller]")]
-public class AdminController : ControllerBase
-{
-    [HttpGet("dashboard")]
-    public IActionResult GetAdminDashboard()
+    
+    [HttpGet("test-connection")]
+    public async Task<IActionResult> TestConnection()
     {
-        return Ok("Chào mừng Admin đến với dashboard!");
+        try
+        {
+            var user = await _dbContext.Users.FirstOrDefaultAsync();
+            return Ok("Database connection is working!");
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"Connection failed: {ex.Message}");
+        }
     }
-}
 
-[Authorize(Policy = "UserOnly")]
-[ApiController]
-[Route("api/[controller]")]
-public class UserController : ControllerBase
-{
-    [HttpGet("profile")]
-    public IActionResult GetUserProfile()
-    {
-        return Ok("Chào mừng User đến với trang cá nhân!");
-    }
 }
 
