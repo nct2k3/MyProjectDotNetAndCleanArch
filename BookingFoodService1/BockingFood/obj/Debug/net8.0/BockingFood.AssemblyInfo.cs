@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BockingFood")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f6bfbcf031e19ae796d9c87c39f692d84b43cae1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1b6ba621ca10191b482d00a6937fcf82e2ee00e4")]
 [assembly: System.Reflection.AssemblyProductAttribute("BockingFood")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BockingFood")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

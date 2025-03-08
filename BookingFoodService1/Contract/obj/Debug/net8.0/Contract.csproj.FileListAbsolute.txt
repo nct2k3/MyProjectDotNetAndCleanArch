@@ -10,3 +10,15 @@ C:\Users\T14 Gen 3\RiderProjects\BockingFood\Contract\obj\Debug\net8.0\refint\Co
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\Contract\obj\Debug\net8.0\Contract.pdb
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\Contract\obj\Debug\net8.0\ref\Contract.dll
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\Contract\obj\Debug\net8.0\Contract.sourcelink.json
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\bin\Debug\net8.0\Contract.deps.json
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\bin\Debug\net8.0\Contract.dll
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\bin\Debug\net8.0\Contract.pdb
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\Contract.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\Contract.AssemblyInfoInputs.cache
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\Contract.AssemblyInfo.cs
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\Contract.csproj.CoreCompileInputs.cache
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\Contract.sourcelink.json
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\Contract.dll
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\refint\Contract.dll
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\Contract.pdb
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\Contract\obj\Debug\net8.0\ref\Contract.dll
