@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingFoodServie2", "BookingFoodServie2\BookingFoodServie2.csproj", "{2C937785-49C2-49BE-AE7A-4ECFF8DF4D4F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookingFoodService2", "BookingFoodService2\BookingFoodService2.csproj", "{2C937785-49C2-49BE-AE7A-4ECFF8DF4D4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
