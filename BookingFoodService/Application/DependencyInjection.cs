@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Application.Application.Commands.Register;
+using Application.Application.Common;
 using Application.Common.Behaviors;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,7 +14,7 @@ public static class DependencyInjection
         
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(RegisterCommandHandler).Assembly));
         services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-      //  services.AddScoped<MessageRabbitMQService>();
+        services.AddScoped<MessageQueeu>();
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
         return services;
     }

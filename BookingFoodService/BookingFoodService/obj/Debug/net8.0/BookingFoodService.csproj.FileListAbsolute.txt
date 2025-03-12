@@ -152,3 +152,4 @@ C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService\BookingFoodServi
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService\BookingFoodService\bin\Debug\net8.0\MediatR.Contracts.dll
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService\BookingFoodService\bin\Debug\net8.0\Contract.dll
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService\BookingFoodService\bin\Debug\net8.0\Contract.pdb
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService\BookingFoodService\bin\Debug\net8.0\RabbitMQ.Client.dll

@@ -1,4 +1,5 @@
 ﻿using Application.Application.Commands.Register;
+using Application.Application.Common;
 using Application.Application.Queries;
 using Contract;
 using Domain.Entities;
@@ -16,11 +17,13 @@ public class AuthenticationController : ControllerBase
 {
     private readonly ISender _sender;
     private readonly IMapper _mapper;
-
-    public AuthenticationController(ISender sender, IMapper mapper)
+    private readonly MessageQueeu _messageQueeu;
+    public AuthenticationController(ISender sender, IMapper mapper, MessageQueeu messageQueeu)
     {
         _sender = sender;
         _mapper = mapper;
+        _messageQueeu = messageQueeu;
+        
     }
 
     [HttpPost("Register")]
@@ -37,13 +40,6 @@ public class AuthenticationController : ControllerBase
         var user = _mapper.Map<LoginQuery>(loginRequest);
         var authen = await _sender.Send(user);
         return Ok(authen);
-    }
-
-    [HttpGet("test")]
-    [Authorize] 
-    public IActionResult GetSecureData()
-    {
-        return Ok(new { Message = "This is a secure endpoint!" });
     }
     
 }

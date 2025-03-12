@@ -4,13 +4,16 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Text;
 using Application.Common.Interfaces.Authentication;
 using Application.Common.Interfaces.Persistance;
+using Application.Common.Interfaces.RabbitMQMessageQueeu;
 using Infrastructure.Common.Authentication;
 using Infrastructure.Common.Dbcontext;
+using Infrastructure.Common.RabbitMQ;
 using Infrastructure.Persistance;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using RabbitMQ.Client;
 
 
 namespace Infrastructure;
@@ -23,6 +26,7 @@ public static class DependencyInjection
         services.AddSingleton<IDateTimeProvider, DateTimeProvider>();
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+        services.AddScoped<IRabbitMqMessageQueeu, RabbitMqMessageQueeu>();
         
 
         return services;
@@ -35,6 +39,7 @@ public static class DependencyInjection
 
         // Đăng ký JwtTokenGenerator
         services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
+        
 
         // Đăng ký Authentication
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

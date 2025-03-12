@@ -7,10 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Common\Interfaces\RabbitMQMessageQueeu\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <ProjectReference Include="..\Domain\Domain.csproj" />
     </ItemGroup>
 
