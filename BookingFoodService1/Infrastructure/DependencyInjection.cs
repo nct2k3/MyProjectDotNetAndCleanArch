@@ -7,6 +7,7 @@ using Infrastructure.Persistence;
 using Infrastructure.Service;
 
 using Microsoft.Extensions.DependencyInjection;
+using Presentation.Common.Interfaces.MessageQueueService;
 
 namespace Infrastructure;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -32,6 +33,8 @@ public static class DependencyInjection
 
         // Đăng ký JwtTokenGenerator
         services.AddSingleton<IJwtTokenGenerator, JwtTokenGenerator>();
+        
+        services.AddScoped<IMessageQueueService, RabbitMQService.RabbitMQService>();
 
         // Đăng ký Authentication
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)

@@ -328,3 +328,4 @@ C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\BockingFood\obj
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\BockingFood\obj\Debug\net8.0\BockingFood.pdb
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\BockingFood\obj\Debug\net8.0\BockingFood.genruntimeconfig.cache
 C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\BockingFood\obj\Debug\net8.0\ref\BockingFood.dll
+C:\Users\T14 Gen 3\RiderProjects\BockingFood\BookingFoodService1\BockingFood\bin\Debug\net8.0\RabbitMQ.Client.dll

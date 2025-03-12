@@ -5,6 +5,7 @@ using Application.Common.Interfaces.Persistance;
 using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
+using Presentation.Authentication.Comands.MessageRabbitMQService;
 using Presentation.Authentication.Comands.Register;
 using Presentation.Common.Behaviors;
 
@@ -18,7 +19,7 @@ public static class DependencyInjection
             // Đăng ký MediatR và handler từ assembly chứa RegisterCommandHandler
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(RegisterCommandHandler).Assembly));
             services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
-            
+            services.AddScoped<MessageRabbitMQService>();
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             return services;
         }
