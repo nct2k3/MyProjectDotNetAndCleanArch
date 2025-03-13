@@ -27,6 +27,7 @@ public static class DependencyInjection
         services.AddScoped<IUnitOfWork, UnitOfWork>();
         services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
         services.AddScoped<IRabbitMqMessageQueeu, RabbitMqMessageQueeu>();
+        services.AddSingleton<IRabbitMQComsumer, RabbitMQComsumer>();
         
 
         return services;

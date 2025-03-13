@@ -41,5 +41,12 @@ public class AuthenticationController : ControllerBase
         var authen = await _sender.Send(user);
         return Ok(authen);
     }
-    
+
+    [HttpPost("Test")]
+    public async Task<IActionResult> TestAsync(string queeu, string message)
+    {
+        _messageQueeu.SendMessage(queeu, message);
+        return Ok();
+        
+    }
 }
