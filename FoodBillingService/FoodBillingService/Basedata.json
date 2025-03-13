@@ -1,0 +1,25 @@
+{
+  "OrderId": "7c626a45-13b6-486c-9380-300ee960b0ec",
+  "User": {
+    "Id": "ea3a9e73-a20b-48a8-a39c-c4de6008349e",
+    "FirstName": "Nguyen",
+    "LastName": "Tran Cong",
+    "Email": "nguyennrdz@gmail.com"
+  },
+  "OrderDate": "2025-03-13T09:06:51.187Z",
+  "TotalAmount": 30000,
+  "Details": [
+    {
+      "Id": "96d857d0-1391-4a56-a879-b2d7523f25e1",
+      "FoodId": "68aeceee-9075-458e-9899-d661af269789",
+      "Quantity": 2,
+      "Price": 20000
+    },
+    {
+      "Id": "ef953803-fec6-40f3-a8a8-6c993c3f4110",
+      "FoodId": "68aeceee-9075-458e-9899-d661af269789",
+      "Quantity": 1,
+      "Price": 10000
+    }
+  ]
+}

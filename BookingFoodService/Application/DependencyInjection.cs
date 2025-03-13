@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Application.Application.Commands.Oder;
 using Application.Application.Commands.Register;
 using Application.Application.Common;
 using Application.Common.Behaviors;
@@ -14,7 +15,7 @@ public static class DependencyInjection
     {
         
         services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(RegisterCommandHandler).Assembly));
-        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(OrderCommandHandler).Assembly));
         services.AddScoped<MessageQueeu>();
         services.AddHostedService<RabbitMQBackgroundConsumer>();
         services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());

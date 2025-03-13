@@ -24,7 +24,7 @@ public class UnitOfWork : IUnitOfWork
         {
             // Sử dụng tên collection tương ứng với tên của TEntity
             var collectionName = entityType.Name;
-            var repositoryInstance = new Repository<TEntity>(_database, collectionName);
+            var repositoryInstance = new Repository<TEntity>( _database, collectionName);
             _repositories[entityType] = repositoryInstance;
         }
 

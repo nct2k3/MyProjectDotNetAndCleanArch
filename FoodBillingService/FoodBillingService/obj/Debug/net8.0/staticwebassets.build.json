@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "A6GbOHdXB8YQyVV7KcHAMGDpxK6XkAt+oe+x8H/BhtU=",
+  "Source": "FoodBillingService",
+  "BasePath": "_content/FoodBillingService",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
